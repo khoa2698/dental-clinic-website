@@ -1,0 +1,44 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn_2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes scaleOut {
+    80% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.ElementScrollEffect {
+    transition: transform 0.5s cubic-bezier(.190,1,.220,1);
+}
+.ElementScrollEffect.left {
+    transform: translateX(-200%);
+}
+.ElementScrollEffect.right {
+    transform: translateX(200%);
+}
+.ElementScrollEffect.show {
+    animation: fadeIn 0.5s cubic-bezier(.190,1,.220,1);
+    transform: translateX(0);
+}
+
+.dr-card.FadeInItem,.testimonial__content.FadeInItem, .sv-card.FadeInItem {
+    transition: all 1s cubic-bezier(.190,1,.220,1) 200ms;
+}

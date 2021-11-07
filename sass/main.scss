@@ -1,0 +1,963 @@
+@import "./abstracts/variables";
+@import "./base/animations";
+@import "./abstracts/mixins";
+
+body {
+    overflow-x: hidden;
+}
+header {
+    position: relative;
+    background-image: url(../images/bg1.jpeg);
+    @include imageJustify();
+    height: 95vh;
+    background-color: rgba($color: #000000, $alpha: .5);
+    & .separate-nav {
+        position: absolute;
+        width: 100%;
+        height: 0.5px;
+        background-color: #fff;
+        top: 77px;
+    }
+    & #header__slider {
+        z-index: 2;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 50%;
+        & .carousel-inner {
+            width: 100%;
+            & .carousel-item {
+                color: #fff;
+                & .content {
+                    width: 50%;
+                    margin-left: 15%;
+                    margin-top: 5%;
+                    &--btn{
+                        padding: 15px 30px;
+                        color: #fff;
+                        transition: 0.3s ease-in;
+                        background-color: $color-primary;
+                        &--right{
+                            background-color: $color-primary-dark;
+                        }
+                    }
+                    &--btn--left:hover  {
+                        background-color: $color-primary-light-hover;
+                    }
+                    &--btn--right:hover  {
+                        background-color: $color-primary-dark-hover;
+                    }
+                }
+            }
+        }
+    }
+
+    & .cover-lay {
+        content: "";
+        position: absolute;
+        background-color: rgba($color: #0f0f0f, $alpha: .5);
+        z-index: 1;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    & .container-fluid {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        & .MenuHolder {
+            & .btMenuVertical, & .logoWhite {
+                display: none;
+            }
+            & .TopBarContact {
+                & .infoToggle {
+                    display: none;
+                }
+            }
+        }
+        & .contact__info {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            &--time, &--phone, &--address {
+                margin-left: 0.5rem;
+            }
+            & .contact__info--phone {
+                & .content--heading {
+                    font-weight: 500;
+                }
+            }
+            & .iconify {
+                width: 4rem;
+                font-size: 3.5rem;
+                color: $color-primary;
+            }
+            & .content {
+                color: #fff;
+                & a {
+                    color: #fff;     
+                    &.content--sub {
+                        color: rgb(196, 191, 191);
+                    }
+                }
+                & h6 {
+                    margin-bottom: .1rem;
+                }
+                & p {
+                    line-height: 1.3;
+                    color: rgb(196, 191, 191);
+                }
+            }
+        }
+    }
+    & .contact__info, .navbar {
+        max-width: 1160px;
+        margin: auto;
+    }
+    & .navbar .nav-item {
+        margin: 0 1rem 0 0;
+    }
+    & .navbar.active {
+        position: fixed;
+        top: 0;
+        font-size: 0.9rem;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 0.1rem 1rem #ccc;
+        max-width: inherit;
+        & .navbar-brand img {
+            width: 8.75rem;
+        }
+        & .navbar-nav {
+            & .nav-link {
+                color: #271d1d;
+            }
+            & .dropdown .dropdown-menu {
+                background-color: #fff;
+                & .dropdown-item {
+                    color: #444;
+                }
+            }
+        }
+    }
+}
+a:hover {
+    text-decoration: none;
+}
+
+header .navbar-dark .navbar-nav {
+    & .nav-item:hover .nav-link {
+        color: $color-primary-light;
+    }
+    & .nav-item.active .nav-link {
+        color: $color-primary-light;
+        border-bottom: $color-primary-light solid 3px;
+    }
+    & .nav-link {
+        color: rgba(255,255,255,1);
+        font-weight: 700;
+        transition: ease-in 0.25s;
+        &.dropdown-toggle::after {
+            transition: transform 0.5s ease;
+        }
+    }
+    & .nav-item .dropdown-menu {   
+        position: absolute;
+        width: 14rem;
+        background-color: #3a3c42;
+        border-top: 3px solid $color-primary-light;
+        top: 88%;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid $color-primary-light;
+            top: -3.5%;
+            left: 10%;
+        }
+        &.dropdown-menu-2 {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid $color-primary-light;
+                top: -7.88%;
+                left: 10%;
+            }
+        }
+        & .dropdown-item {
+            transition: 0.75s cubic-bezier(.190,1,.220,1);
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.25rem 0.8rem;
+            &:hover {
+                color: $color-primary-light;
+                background-color: transparent;
+            }
+            & .iconify {
+                padding-bottom: 0.2rem;
+            }
+        }
+        animation: fadeIn_2 1.5s cubic-bezier(.190,1,.220,1);
+    }
+    & .dropdown:hover {
+        & .dropdown-toggle::after{
+            transform: rotate(180deg);
+        }
+        &>.dropdown-menu {
+            display: block;
+        }
+    }
+} 
+
+@media (max-width: 992px) {
+    header .navbar {
+        // display: none;
+        flex-direction: column;
+        background-color: #000000;
+        height: 100vh;
+        justify-content: flex-start;
+        & .navbar-nav .nav-item.active .nav-link {
+            border-bottom: none;
+        }
+    }
+    header .NavEffect {
+        & .MenuHolder {
+            display: block;
+            margin-top: 0.5rem;
+            padding: 1.25rem 1.25rem 0 1.25rem;
+            & .btMenuVertical {
+                display: block;
+                font-size: 3rem;
+                color: $color-primary;
+                position: fixed;
+                cursor: pointer;
+            }
+            & .logoWhite {
+                display: inline-block;
+                margin-left: 4rem;
+                & img {
+                    width: 11rem;
+                }
+            }
+            & .TopBarContact {
+                position: relative;
+                width: 72px;
+                height: 36px;
+                float: right;
+                border: 1px solid $color-primary-light;
+                & .infoToggle {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    transition: 0.5s ease;
+                    & div {
+                        position: absolute;
+                        width: 50%;
+                        height: 100%;
+                        font-size: 2rem;
+                        border: 1px solid $color-primary-light;
+                        & .iconify {
+                            // width: 100%;
+                            // height: 100%;
+                        }
+                        &.left {
+                            background-color: $color-primary-light;
+                            & .iconify {
+                                transform: translateY(-40%);
+                                padding-top: 0.1rem;
+                                padding-right: 0.1rem;
+                                color: #fff;
+                            }
+                        }
+                        &.right {
+                            right: 0;
+                            font-size: 1.5rem;
+                            text-align: center;
+                            margin-bottom: 20%;
+                            & .iconify {
+                                color: $color-primary-light;
+                                transition: transform 0.5s ease;
+                            }
+                        }
+                    }
+                    &.active {
+                        & div.left {
+                            background-color: transparent;
+                            & .iconify {
+                                color: $color-primary-light;
+                            }
+                        }
+                        & div.right {
+                            background-color: $color-primary-light;
+                            & .iconify {
+                                color: #fff;
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .contact__info {
+            position: absolute;
+            right: 0;
+            top: 142%;
+            // display: none;
+            opacity: 0;
+            visibility: hidden;
+            flex-direction: column;
+            border: 1px solid $color-primary-light;
+            width: 320px;
+            background-color: #1d1f27;
+            align-items: flex-start;
+            padding: 0.3rem 1rem;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            &--time, &--phone, &--address {
+                border-bottom: 1px solid rgb(51, 49, 49);
+                font-size: 0.9rem;
+                padding: 10px 0;
+                width: 100%;
+                margin-left: 0;
+            }
+            &--address {
+                border-bottom: none;
+            }
+        }
+        & .contact__info.active {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+// common-feature
+
+.common-feature {
+    position: relative;
+    background-image: url("../images/device-dental.jpg");
+    @include imageJustify();
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #ffffff, $alpha: .92);
+    }
+}
+.common-feature .container__card {
+    background-color: #00B3CC;
+    position: relative;
+    & .content {
+        padding: 4rem 1.5rem 0 1.5rem;
+        color: #fff;
+    }
+    &.card--2 {
+        background-color: $color-primary-2 ;
+    }
+    &.card--3 {
+        background-color: $color-primary-3 ;
+    }
+    &.card--4 {
+        background-color: $color-primary-4 ;
+    }
+    & .content--btn {
+        background-color: #fff;
+        color: #000000;
+        display: inline-block;
+        padding: 0.625rem 1rem;
+        margin-top: 0.5rem;
+        margin-bottom: 3.125rem;
+        margin-left: 1.5rem;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            background-color: rgb(201, 194, 194);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.common-feature .container__card {
+    &.card--1 {
+        & .icon-card {
+            @include iconCard;
+            background-image: url("../images/dental-care.png");
+        }
+    }
+    &.card--2 {
+        & .icon-card {
+            @include iconCard;
+            background-image: url("../images/teeth-care.png");
+        }
+    }
+    &.card--3 {
+        & .icon-card {
+            @include iconCard;
+            background-image: url("../images/tooth-white.png");
+        }
+    }
+    &.card--4 {
+        & .icon-card {
+            @include iconCard;
+            background-image: url("../images/dental-implant.png");
+        }
+    }
+}
+
+.common-feature .outstanding {
+    & .right img {
+        @include imageJustify();
+        width: 100%;
+    }
+    & .content {
+        &__header {
+            &--title {
+                color: $color-primary;
+                font-size: 3.75rem;
+                font-weight: 700;
+                letter-spacing: .1rem;
+                line-height: 1.15;
+                margin-top: 1rem;
+            }
+            &--subtitle {
+                font-size: 1.25rem;
+            }
+        }
+        &__script {
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+        & .dash {
+            width: 6rem;
+            height: 3px;
+            background-color: $color-primary ;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+// doctor-team
+
+.dr-team {
+    padding: 2rem 0 5rem 0;
+    background-color: #e0e0e0;
+    & .dr-card {
+        margin-top: 3rem;
+    }
+}
+
+.dr-team .container {
+    & .dr-card {
+        background-clip: content-box;
+        color: hsl(0, 0%, 100%);
+        opacity: 0;
+        transform: scale(0.95);
+        & .container-img {
+            position: relative;
+            & .search-info {
+                position: absolute;
+                opacity: 0;
+                width: 100%;
+                top: 0;
+                height: 0;
+                background-color: rgba(0, 0, 0, 0.6);
+                color: $color-primary-light;
+                font-size: 3rem;
+                text-align: center;
+                transition: 0.25s ease-in-out;;
+                & .iconify {
+                    height: 100%;
+                }
+                
+            }
+            &:hover .search-info{
+                height: 100%;
+                opacity: 1;
+            }
+        } 
+        &--contact {
+            float: right;
+            margin: 0 1rem 1rem;
+            & a {
+                position: relative;
+                &:not(:last-child){
+                    margin-right: 0.3rem;
+                }
+                display: inline-block;
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 2rem;
+                color: #00a2ff;
+                background-color: #ffffff;
+                border-radius: 50%;
+                text-align: center;
+                
+                & .iconify {
+                    margin-top: -1.0625rem;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    border: 1px solid #ffffff;
+                    background-color: $color-green-dark;
+                    mix-blend-mode: hard-light;
+                    transition: all 0.3s ease;
+                    transform-origin: center;
+                    transform: scale(1);
+                }
+                &:hover {
+                    &::before {
+                        transform: scale(0);
+                    }
+                    color: #00B6FF;
+                }
+            }
+        }
+    }
+    @include cardLayout;
+}
+
+.dr-team .dr-card {
+    &--1 {
+        background-color: $color-primary-3;
+        & .icon-card {
+            @include iconCard;
+            width: 3rem;
+            height: 3rem;
+            background-size: 2rem;
+            top: -2rem;
+            border: none;
+            background-image: url("../images/dental-care.png");
+            &--2 {
+                left: 3.5rem;
+                background-image: url("../images/dental-implant.png")
+            }
+            
+        }
+    }
+    &--2 {
+        background-color: $color-primary-3;
+        & .icon-card {
+            @include iconCard;
+            width: 3rem;
+            height: 3rem;
+            background-size: 2rem;
+            top: -2rem;
+            border: none;
+            background-image: url("../images/teeth-care.png");
+            &--2 {
+                left: 3.5rem;
+                background-image: url("../images/dental-care.png")
+            }
+        }
+    }
+    &--3 {
+        background-color: $color-primary-3;
+        & .icon-card {
+            @include iconCard;
+            width: 3rem;
+            height: 3rem;
+            background-size: 2rem;
+            top: -2rem;
+            border: none;
+            background-image: url("../images/tooth-white.png");
+        }
+    }
+    &--4 {
+        background-color: $color-primary-3;
+        & .icon-card {
+            @include iconCard;
+            width: 3rem;
+            height: 3rem;
+            background-size: 2rem;
+            top: -2rem;
+            border: none;
+            background-image: url("../images/dental-implant.png");
+        }
+    }
+
+}
+
+// section testimonials 
+
+.testimonial {
+    @include headingSection();
+    &__content {
+        opacity: 0;
+        color: #ffffff;
+        transform: scale(0.95);
+        &--1 {
+            background-color: $color-primary-light;
+        }
+        &--2 {
+            background-color: $color-primary;
+        }
+        &--3 {
+            background-color: #0087AA;
+        }
+        &--4 {
+            background-color: $color-green-dark;
+        }
+        &--info{
+            text-align: center;
+            & h4 {
+                margin-top: 0.5rem;
+            }
+            & .client-img {
+                border-radius: 50%;
+                border: 3px solid #ffffff;
+                @include imageJustify();
+                width: 100%;
+                max-width: 190px;
+            }
+            & .sign-img img{
+                @include imageJustify();
+                width: 100px;
+            }
+        }
+        &--text {
+            & blockquote {
+                position: relative;
+                padding: 20px 0 20px 20px;
+                margin: 0;
+                & i {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0.2;
+                    font-size: 3.75rem;
+                }
+                & p {
+                    font-size: 1.3rem;
+                }
+            }
+        } 
+    }
+}
+
+// contact us
+
+.contact-us {
+    background-color: $color-green-dark;
+    color: #ffffff;
+    & .content {
+        padding: 2.5rem;
+        & a {
+            background-color: #ffffff;
+            padding: 13px 26px;
+            transition: 0.3s ease-in-out;
+            &:hover {
+                background-color: #c9c2c2;
+                transform: translateY(-2px);
+            }
+        }
+        & .heading {
+            & h2 {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+// section services
+
+.services {
+    @include headingSection();
+    & .container {
+        @include cardLayout;
+        & .sv-card {
+            opacity: 0;
+            transform: scale(0.95);
+            margin-top: 3rem;
+            & h5::first-letter {
+                text-transform: uppercase;
+            }
+            & h5 {
+                font-size: 1.1rem;
+                font-weight: 400;
+            }
+            & h3 {
+                text-transform: uppercase;
+                transition: 0.25s ease-in;
+            }
+            & .container--card {
+                height: 100%;
+                font-family: Merriweather;
+                transition: 0.25s ease-in;
+            }
+            & .container--card:hover {
+                box-shadow: 0 0 42px 6px rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+                & h3 {
+                    color: $color-primary;
+                }
+            }
+            &--1 {
+                & .icon-card {
+                    @include iconCardService;
+                    background-image: url("../images/icon-smile.png");
+                    
+                }
+            }
+            &--2 {
+                & .icon-card {
+                    @include iconCardService;
+                    background-image: url("../images/dental-implant.png");
+                }
+            }
+            &--3 {
+                & .icon-card {
+                    @include iconCardService;
+                    background-image: url("../images/dental-care.png");
+                }
+            }
+            &--4 {
+                & .icon-card {
+                    @include iconCardService;
+                    background-image: url("../images/dental-bridge.png");
+                }
+            }
+            &--5 {
+                & .icon-card {
+                    @include iconCardService;
+                    background-image: url("../images/dental-crown.png");
+                    
+                }
+            }
+            &--6 {
+                & .icon-card {
+                    @include iconCardService;
+                    background-image: url("../images/dental-braces.png");
+                }
+            }
+            &--7 {
+                & .icon-card {
+                    @include iconCardService;
+                    background-image: url("../images/dental-veneer.png");
+                }
+            }
+            &--8 {
+                & .icon-card {
+                    @include iconCardService;
+                    background-image: url("../images/tooth-white.png");
+                }
+            }
+        }
+    }
+}
+
+// section map
+.map {
+    & .container-map {
+        position: relative;
+        & .containerWorkingHour {
+            width: 350px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            transition: 1s cubic-bezier(.190,1,.220,1);
+            &.closed {
+                transform: translateX(-100%);
+            }
+            & #btn-toggle {
+                position: absolute;
+                background-color: $color-primary-light;
+                width: 40px;
+                height: 40px;
+                right: 0;
+                top: 45%;
+                cursor: pointer;
+                transition: 1s cubic-bezier(.190,1,.220,1);
+                transform-origin: right;
+                &.rotate {
+                    transform: rotate(180deg);
+                }
+                &::after {
+                    content: attr(data-icon);
+                    position: absolute;
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    color: #fff;
+                    font-size: 1.5rem;
+                }
+            }
+            & .working-hours-wrap {
+                color: #ffffff;
+                & h3 {
+                    text-transform: uppercase;
+                }
+                & .working-hours {
+                    padding-top: 1rem;
+                    overflow: hidden;
+                    & .row {
+                        line-height: 2;
+                        border-bottom: 1px solid $color-primary;
+                    }
+                }
+                & .contact {
+                    padding-top: 0.625rem;
+                    & a {
+                        color: #ffffff;
+                        transition: 0.25s ease-in;
+                    }
+                    & a:hover {
+                        color: $color-primary-light;
+                    }
+                }
+            }
+        }
+    }
+}
+.TopSpace {
+    padding-top: 40px;
+}
+
+@media (max-width: 576px){
+    .map .container-map .containerWorkingHour {
+        width: 250px;
+        font-size: 0.9rem;
+        & h3 {
+            font-size: 1.2rem;
+        }
+    }
+}
+@media (max-width: 768px){
+    .map iframe {
+        height: 500px;
+    }
+}
+
+// footer section
+
+footer {
+    position: relative;
+    padding-top: 4rem;
+    background-image: url("../images/device-dental.jpg");
+    background-attachment: fixed;
+    @include imageJustify;
+    color: #fff;
+    & a {
+        color: #fff;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color-primary-dark, $alpha: .95);
+    }
+    & .header {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    & .dash {
+        width: 4rem;
+        height: 2px;
+        background-color: #ffffff;
+    }
+    & .content {
+        margin-top: 1rem;
+        & > ul {
+            list-style-type: none;
+            padding: 0;
+            & li {
+                text-transform: capitalize;
+                &:not(:first-child) {
+                    padding-top: 0.5rem;
+                }
+                & a {
+                    transition: 0.25s ease-in;
+                    font-weight: 500;
+                    &.title {
+                        @include UnderlineLinkHover;
+                        &:hover {
+                            color: $color-primary-light;
+                        }
+                    }
+                }
+            }
+        }
+        & .footer--contact {
+            float: right;
+            margin: 0 1rem 1rem;
+            & a {
+                position: relative;
+                &:not(:last-child){
+                    margin-right: 1rem;
+                }
+                display: inline-block;
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 2rem;
+                color: #00a2ff;
+                background-color: #ffffff;
+                border-radius: 50%;
+                text-align: center;
+                
+                & .iconify {
+                    margin-top: -1.0625rem;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    border: 1px solid #ffffff;
+                    background-color: $color-green-dark;
+                    mix-blend-mode: hard-light;
+                    transition: all 0.3s ease;
+                    transform-origin: center;
+                    transform: scale(1);
+                }
+                &:hover {
+                    &::before {
+                        transform: scale(0);
+                    }
+                    color: #00B6FF;
+                }
+            }
+        }
+    }
+    & .copyright {
+        position: relative;
+        background-color: $color-green-dark;
+        height: 4rem;
+        text-align: center;
+        & .content {
+            transform: translateY(15%);
+            & a {
+                color: $color-primary-light;
+            }
+        }
+    }
+}
+// body {
+//     transition: 0.75s cubic-bezier(.190,1,.220,1);
+//     transform: translateX(20%);
+// }

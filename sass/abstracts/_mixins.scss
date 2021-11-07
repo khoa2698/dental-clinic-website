@@ -1,0 +1,112 @@
+@mixin imageJustify {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-attachment: scroll;
+}
+@mixin headingSection {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    & .container {
+        &__heading {
+            text-align: center;
+            margin-bottom: 3rem;
+            & h5::first-letter {
+                text-transform: uppercase;
+            }
+            & h2 {
+                text-transform: uppercase;
+                font-size: 3.75rem;
+                & b {
+                    color: $color-primary-light;
+                }
+            }
+            & p {
+                font-size: 1.2rem;
+            }
+        }
+        & .dash {
+            display: inline-block;
+            width: 4rem;
+            height: 0.1rem;
+            background-color: $color-primary;
+        }
+    }
+}
+@mixin iconCard {
+    position: absolute;
+    z-index: 1;
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-primary-light;
+    border-radius: 50%;
+    transform: translate(25%, -50%);
+    @include imageJustify();
+    background-size: 2.8125rem;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: solid 2px $color-primary-light;
+        border-radius: 50%;
+        background: #8b7272;
+        mix-blend-mode: color-burn;
+        transition: all 0.3s ease;
+        transform-origin: center;
+        transform: scale(0);
+    }
+    &:hover:after{
+        transform: scale(1);
+    }
+}
+@mixin iconCardService {
+    @include iconCard;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-size: 2rem;
+    top: -2rem;
+    left: -1rem;
+}
+@mixin cardLayout {
+    & img {
+    @include imageJustify();
+    width: 100%;
+    }
+    & .content {
+        position: relative;
+        margin: 2rem 1rem 0 1rem;
+        & h3 {
+            font-weight:bolder;
+            font-size: 1.3rem;
+        }
+        & p {
+            display: -webkit-box;
+            max-width: 100%;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+}
+@mixin UnderlineLinkHover {
+
+    position: relative;
+    &:after {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: $color-primary-light;
+        left: 50%;
+        bottom: -10px;
+        transition: all 0.25s ease-in-out;
+    }
+    &:hover::after {
+        width: 100%;
+        left: 0;
+    }
+}
