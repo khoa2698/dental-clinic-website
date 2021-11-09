@@ -1,7 +1,9 @@
 
 // -----------scroll Navbar effect-----------
-const NavEffect = document.querySelector('.NavEffect')
-const navbar = document.querySelector('.navbar')
+const NavEffect = document.querySelector('.NavEffect');
+const navbar = document.querySelector('.navbar');
+
+const widthWindow = $(window).width();
 window.addEventListener('scroll', fixNav)
 
 function fixNav() {
@@ -67,10 +69,13 @@ scrollEffect2()
 
 const infoToggle = document.querySelector(".infoToggle");
 const contactInfo = document.querySelector(".contact__info");
+console.log(contactInfo)
 infoToggle.addEventListener("click", () => {
     contactInfo.classList.toggle("active");
     infoToggle.classList.toggle("active");
 })
+
+
 // const SequentialAppears = document.querySelectorAll('.SequentialAppear')
 // function SequentialAppear() {
 //     const triggerBottom = window.innerHeight / 9 * 8
@@ -93,4 +98,3 @@ infoToggle.addEventListener("click", () => {
 // }
 // window.addEventListener('scroll', SequentialAppear)
 // SequentialAppear()
-

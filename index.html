@@ -31,13 +31,7 @@
     <span class="cover-lay"></span>
     <span class="separate-nav"></span>
     <div class="container-fluid NavEffect">
-      <div class="MenuHolder">
-        <span class="btMenuVertical iconify" data-icon="line-md:menu-fold-right"></span>
-        <span class="logoWhite">
-          <a href="#">
-            <img src="./images/dentalcare-logo-white.png" alt="Logo">
-          </a>
-        </span>
+      <div class="SearchContainer">
         <div class="TopBarContact">
           <span class="infoToggle">
             <div class="left">
@@ -71,64 +65,79 @@
             </div>
           </div>
         </div>
+        <form class="form-inline search" action="#">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+
       </div>
+
       <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">
           <img src="./images/dentalcare-logo-color.png" alt="Logo">
         </a>
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link active" href="#">HOME</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">ABOUT US</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">
-                <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
-                General info
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
-                Doctors profile
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
-                Appointments
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
-                Testimonials
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
-                Contact us
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
-                Working hours
-              </a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">SERVICES</a>
-            <div class="dropdown-menu dropdown-menu-2">
-              <a class="dropdown-item" href="#">
-                <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
-                Services
-              </a>
-              <a class="dropdown-item" href="#">
-                <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
-                Procedures
-              </a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">GET A FREE QUOTE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">NEWS</a>
-          </li>
-        </ul>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <!-- <span class="navbar-toggler-icon">red</span> -->
+          <span class="iconify" data-icon="bytesize:menu"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link active" href="#">HOME</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">ABOUT US</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">
+                  <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
+                  General info
+                </a>
+                <a class="dropdown-item" href="#">
+                  <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
+                  Doctors profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
+                  Appointments
+                </a>
+                <a class="dropdown-item" href="#">
+                  <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
+                  Testimonials
+                </a>
+                <a class="dropdown-item" href="#">
+                  <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
+                  Contact us
+                </a>
+                <a class="dropdown-item" href="#">
+                  <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
+                  Working hours
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown" href="#">SERVICES</a>
+              <div class="dropdown-menu dropdown-menu-2">
+                <a class="dropdown-item" href="#">
+                  <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
+                  Services
+                </a>
+                <a class="dropdown-item" href="#">
+                  <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span>
+                  Procedures
+                </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">GET A FREE QUOTE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">NEWS</a>
+            </li>
+          </ul>
+        </div>
+        
       </nav>
     </div>
     <div id="header__slider" class="carousel slide" data-ride="carousel" data-interval="false">
@@ -136,8 +145,8 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="content">
-            <h1 style="letter-spacing: .2rem; font-size: 3.5rem;">YOUR OWN STOMATOLOGIST</h1>
-            <div style="font-size: 1.25rem; line-height: 1.55;">Donec libero dui, dapibus non leo et, molestie faucibus
+            <h1 style="letter-spacing: .2rem;">YOUR OWN STOMATOLOGIST</h1>
+            <div class="text" style="line-height: 1.55;">Donec libero dui, dapibus non leo et, molestie faucibus
               risus. In fermentum tortor et posuere laoreet.
               Morbi pharetra velit ut varius semper. Donec accumsan et lacus at posuere.
             </div>
@@ -151,8 +160,8 @@
         </div>
         <div class="carousel-item">
           <div class="content">
-            <h1 style="letter-spacing: .2rem; font-size: 3.5rem;">YOUR BEAUTIFUL SMILE</h1>
-            <div style="font-size: 1.25rem; line-height: 1.55;">DentalCare is most focused in helping you discover your
+            <h1 style="letter-spacing: .2rem;">YOUR BEAUTIFUL SMILE</h1>
+            <div class="text" style="line-height: 1.55;">DentalCare is most focused in helping you discover your
               most beauiful smile as quickly as possible. Get your best looking smile now!</div>
             <a class="content--btn content--btn--left mt-3 mr-3 d-inline-block" href="#">
               <span>READ MORE</span>

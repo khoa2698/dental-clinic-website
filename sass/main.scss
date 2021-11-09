@@ -28,6 +28,12 @@ header {
             & .carousel-item {
                 color: #fff;
                 & .content {
+                    & h1 {
+                        font-size: 3.5rem;
+                    }
+                    & .text {
+                        font-size: 1.25rem;
+                    }
                     width: 50%;
                     margin-left: 15%;
                     margin-top: 5%;
@@ -69,14 +75,30 @@ header {
         left: 0;
         right: 0;
         padding: 0;
-        & .MenuHolder {
-            & .btMenuVertical, & .logoWhite {
-                display: none;
-            }
-            & .TopBarContact {
-                & .infoToggle {
-                    display: none;
+        & .navbar .btn-close {
+            display: none;
+            position: absolute;
+            color: $color-primary;
+            opacity: 0.8;
+            right: 13px;
+            top: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        & .SearchContainer {
+            display: flex;
+            justify-content: space-between;
+            & .search {
+                margin-right: 1rem;
+                & .btn-primary {
+                    background-color: $color-primary;
+                    border-color: $color-primary;
                 }
+            }
+        }
+        & .TopBarContact {
+            & .infoToggle {
+                display: none;
             }
         }
         & .contact__info {
@@ -114,7 +136,11 @@ header {
             }
         }
     }
-    & .contact__info, .navbar {
+    & .contact__info {
+        max-width: 1160px;
+        margin: 0;
+    }
+    & .navbar {
         max-width: 1160px;
         margin: auto;
     }
@@ -125,9 +151,9 @@ header {
         position: fixed;
         top: 0;
         font-size: 0.9rem;
-        background-color: #fff;
+        background-color: rgb(206, 197, 197);
         width: 100%;
-        box-shadow: 0 0.1rem 1rem #ccc;
+        box-shadow: 0 0.1rem 1rem rgb(34, 34, 34);
         max-width: inherit;
         & .navbar-brand img {
             width: 8.75rem;
@@ -211,135 +237,7 @@ header .navbar-dark .navbar-nav {
         }
         animation: fadeIn_2 1.5s cubic-bezier(.190,1,.220,1);
     }
-    & .dropdown:hover {
-        & .dropdown-toggle::after{
-            transform: rotate(180deg);
-        }
-        &>.dropdown-menu {
-            display: block;
-        }
-    }
 } 
-
-@media (max-width: 992px) {
-    header .navbar {
-        display: none;
-        flex-direction: column;
-        background-color: #000000;
-        height: 100vh;
-        justify-content: flex-start;
-        & .navbar-nav .nav-item.active .nav-link {
-            border-bottom: none;
-        }
-    }
-    header .NavEffect {
-        & .MenuHolder {
-            display: block;
-            margin-top: 0.5rem;
-            padding: 1.25rem 1.25rem 0 1.25rem;
-            & .btMenuVertical {
-                display: block;
-                font-size: 3rem;
-                color: $color-primary;
-                position: fixed;
-                cursor: pointer;
-            }
-            & .logoWhite {
-                display: inline-block;
-                margin-left: 4rem;
-                & img {
-                    width: 11rem;
-                }
-            }
-            & .TopBarContact {
-                position: relative;
-                width: 72px;
-                height: 36px;
-                float: right;
-                border: 1px solid $color-primary-light;
-                & .infoToggle {
-                    position: relative;
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    cursor: pointer;
-                    transition: 0.5s ease;
-                    & div {
-                        position: absolute;
-                        width: 50%;
-                        height: 100%;
-                        font-size: 2rem;
-                        border: 1px solid $color-primary-light;
-                        &.left {
-                            background-color: $color-primary-light;
-                            & .iconify {
-                                transform: translateY(-40%);
-                                padding-top: 0.1rem;
-                                padding-right: 0.1rem;
-                                color: #fff;
-                            }
-                        }
-                        &.right {
-                            right: 0;
-                            font-size: 1.5rem;
-                            text-align: center;
-                            & .iconify {
-                                margin-bottom: 25%;
-                                color: $color-primary-light;
-                                transition: transform 0.5s ease;
-                            }
-                        }
-                    }
-                    &.active {
-                        & div.left {
-                            background-color: transparent;
-                            & .iconify {
-                                color: $color-primary-light;
-                            }
-                        }
-                        & div.right {
-                            background-color: $color-primary-light;
-                            & .iconify {
-                                color: #fff;
-                                transform: rotate(180deg);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        & .contact__info {
-            position: absolute;
-            right: 0;
-            top: 142%;
-            // display: none;
-            opacity: 0;
-            visibility: hidden;
-            flex-direction: column;
-            border: 1px solid $color-primary-light;
-            width: 320px;
-            background-color: #1d1f27;
-            align-items: flex-start;
-            padding: 0.3rem 1rem;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-            &--time, &--phone, &--address {
-                border-bottom: 1px solid rgb(51, 49, 49);
-                font-size: 0.9rem;
-                padding: 10px 0;
-                width: 100%;
-                margin-left: 0;
-            }
-            &--address {
-                border-bottom: none;
-            }
-        }
-        & .contact__info.active {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-}
 
 // common-feature
 
@@ -953,7 +851,173 @@ footer {
         }
     }
 }
-// body {
-//     transition: 0.75s cubic-bezier(.190,1,.220,1);
-//     transform: translateX(20%);
-// }
+
+@media screen and (max-width: 575px) {
+    header #header__slider .carousel-inner .carousel-item {
+        & .content {
+            width: 70%;
+            & h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+            }
+            & .text {
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .SearchContainer .search {
+        margin-left: 0.7rem;
+        & .form-control {
+            width: 68%;
+        }
+    }
+
+    .common-feature .outstanding .content__header--title {
+        font-size: 2.75rem;
+    }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+    header {
+        & #header__slider .carousel-inner .carousel-item {
+            & .content {
+                width: 62%;
+                & h1 {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    header {
+        & .separate-nav {
+            display: none;
+        }
+        & .NavEffect {
+            background-color: rgba(80, 80, 80, 0.9);
+            & .navbar {
+                width: 100%;
+                padding: 0.5rem 1rem;
+                & .navbar-nav .nav-item.active .nav-link {
+                    border-bottom: none;
+                }
+                & .navbar-toggler {
+                    color: #000000;
+                }
+            }
+            & .TopBarContact {
+                position: relative;
+                width: 72px;
+                height: 36px;
+                border: 1px solid $color-primary-light;
+                margin-top: 0.9rem;
+                z-index: 10;
+                margin: 1rem 0 1rem 1rem;
+                & .infoToggle {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    transition: 0.5s ease;
+                    & div {
+                        position: absolute;
+                        width: 50%;
+                        height: 100%;
+                        font-size: 2rem;
+                        border: 1px solid $color-primary-light;
+                        &.left {
+                            background-color: $color-primary-light;
+                            & .iconify {
+                                transform: translateY(-40%);
+                                padding-top: 0.1rem;
+                                padding-right: 0.1rem;
+                                color: #fff;
+                            }
+                        }
+                        &.right {
+                            right: 0;
+                            font-size: 1.5rem;
+                            text-align: center;
+                            & .iconify {
+                                margin-bottom: 25%;
+                                color: $color-primary-light;
+                                transition: transform 0.5s ease;
+                            }
+                        }
+                    }
+                    &.active {
+                        & div.left {
+                            background-color: transparent;
+                            & .iconify {
+                                color: $color-primary-light;
+                            }
+                        }
+                        & div.right {
+                            background-color: $color-primary-light;
+                            & .iconify {
+                                color: #fff;
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                & .contact__info {
+                    position: absolute;
+                    top: 142%;
+                    // display: none;
+                    opacity: 0;
+                    visibility: hidden;
+                    flex-direction: column;
+                    border: 1px solid $color-primary-light;
+                    width: 320px;
+                    background-color: #1d1f27;
+                    align-items: flex-start;
+                    padding: 0.3rem 1rem;
+                    transition: opacity 0.5s ease, visibility 0.5s ease;
+                    &--time, &--phone, &--address {
+                        border-bottom: 1px solid rgb(51, 49, 49);
+                        font-size: 0.9rem;
+                        padding: 10px 0;
+                        width: 100%;
+                        margin-left: 0;
+                    }
+                    &--address {
+                        border-bottom: none;
+                    }
+                }
+                & .contact__info.active {
+                    display: block;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        & .navbar-dark .navbar-nav .nav-item .dropdown-menu {
+            position: relative;
+            width: 100%;
+        }
+    }
+}
+@media (min-width: 768px) {
+    header .navbar-dark .navbar-nav .dropdown:hover {
+        & .dropdown-toggle::after{
+            transform: rotate(180deg);
+        }
+        &>.dropdown-menu {
+            display: block;
+        }
+    }
+}
+@media (min-width: 993px) and (max-width: 1066px) {
+    .SearchContainer .search {
+        & .form-control {
+            width: 9rem;
+            font-size: 0.9rem;
+        }
+        & .btn {
+            font-size: 0.8rem;
+            padding: 8px 3px;
+        }
+    }
+}
