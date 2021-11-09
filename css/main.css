@@ -1812,7 +1812,57 @@ footer .copyright .content a {
   color: #22c7dd;
 }
 
-@media screen and (max-width: 575px) {
+@media (max-width: 479px) {
+  header #header__slider .carousel-inner .carousel-item .content {
+    width: 70%;
+  }
+  header #header__slider .carousel-inner .carousel-item .content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  header #header__slider .carousel-inner .carousel-item .content .text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  header #header__slider .carousel-inner .carousel-item .content .content--btn {
+    font-size: 0.8rem;
+    padding: 15px 16px;
+  }
+  header .NavEffect .SearchContainer .search {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  header .NavEffect .SearchContainer .TopBarContact {
+    border: none;
+  }
+  header .NavEffect .SearchContainer .TopBarContact .infoToggle div.left .iconify {
+    font-size: 1.7rem;
+  }
+  header .NavEffect .SearchContainer .search .form-control {
+    width: 60%;
+  }
+  header .NavEffect .SearchContainer .search .btn {
+    padding: 0.375rem;
+  }
+  .common-feature .outstanding .content__header--title {
+    font-size: 2.3rem;
+  }
+  .testimonial .container__heading h2 {
+    font-size: 2.3rem;
+  }
+  .contact-us .content a {
+    padding: 0.5rem 1rem;
+  }
+  .contact-us .content .heading h2 {
+    font-size: 1.5rem;
+  }
+  .services .container__heading h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 575px) {
   header #header__slider .carousel-inner .carousel-item .content {
     width: 70%;
   }
@@ -1864,7 +1914,6 @@ footer .copyright .content a {
     position: relative;
     width: 72px;
     height: 36px;
-    border: 1px solid #22c7dd;
     margin-top: 0.9rem;
     z-index: 10;
     margin: 1rem 0 1rem 1rem;
