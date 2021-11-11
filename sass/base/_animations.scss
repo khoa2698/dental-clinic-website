@@ -25,6 +25,9 @@
         transform: scale(1);
     }
 }
+.testimonial, .outstanding, .contact-us, .services {
+    overflow-x: hidden;
+}
 .ElementScrollEffect {
     transition: transform 0.5s cubic-bezier(.190,1,.220,1);
 }
@@ -32,7 +35,7 @@
     transform: translateX(-200%);
 }
 .ElementScrollEffect.right {
-    transform: translateX(200%);
+    transform: translateX(100%);
 }
 .ElementScrollEffect.show {
     animation: fadeIn 0.5s cubic-bezier(.190,1,.220,1);

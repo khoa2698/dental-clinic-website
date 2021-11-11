@@ -62,6 +62,10 @@
   }
 }
 
+.testimonial, .outstanding, .contact-us, .services {
+  overflow-x: hidden;
+}
+
 .ElementScrollEffect {
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -75,8 +79,8 @@
 }
 
 .ElementScrollEffect.right {
-  -webkit-transform: translateX(200%);
-          transform: translateX(200%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .ElementScrollEffect.show {
@@ -199,9 +203,9 @@ header .container-fluid .SearchContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 header .container-fluid .SearchContainer .search {
@@ -1812,12 +1816,13 @@ footer .copyright .content a {
   color: #22c7dd;
 }
 
-@media (max-width: 479px) {
+@media screen and (max-width: 479px) {
   header #header__slider .carousel-inner .carousel-item .content {
     width: 70%;
+    margin-top: 8%;
   }
   header #header__slider .carousel-inner .carousel-item .content h1 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
   header #header__slider .carousel-inner .carousel-item .content .text {
@@ -1826,7 +1831,7 @@ footer .copyright .content a {
   }
   header #header__slider .carousel-inner .carousel-item .content .content--btn {
     font-size: 0.8rem;
-    padding: 15px 16px;
+    padding: 8px 6px;
   }
   header .NavEffect .SearchContainer .search {
     -webkit-box-pack: end;
@@ -1837,13 +1842,18 @@ footer .copyright .content a {
     border: none;
   }
   header .NavEffect .SearchContainer .TopBarContact .infoToggle div.left .iconify {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
+    padding-top: 0.3rem;
+    padding-left: 0.2rem;
   }
   header .NavEffect .SearchContainer .search .form-control {
     width: 60%;
   }
   header .NavEffect .SearchContainer .search .btn {
     padding: 0.375rem;
+  }
+  header .NavEffect .SearchContainer .TopBarContact .contact__info {
+    width: 268px;
   }
   .common-feature .outstanding .content__header--title {
     font-size: 2.3rem;
@@ -1873,6 +1883,10 @@ footer .copyright .content a {
   header #header__slider .carousel-inner .carousel-item .content .text {
     font-size: 1.1rem;
   }
+  header #header__slider .carousel-inner .carousel-item .content .content--btn {
+    font-size: 0.8rem;
+    padding: 15px 23px;
+  }
   .SearchContainer .search {
     margin-left: 0.7rem;
   }
@@ -1899,6 +1913,11 @@ footer .copyright .content a {
   }
   header .NavEffect {
     background-color: rgba(80, 80, 80, 0.9);
+  }
+  header .NavEffect .SearchContainer {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   header .NavEffect .navbar {
     width: 100%;
@@ -1940,8 +1959,7 @@ footer .copyright .content a {
   header .NavEffect .TopBarContact .infoToggle div.left .iconify {
     -webkit-transform: translateY(-40%);
             transform: translateY(-40%);
-    padding-top: 0.1rem;
-    padding-right: 0.1rem;
+    padding: 0.3rem 0.1rem 0 0.2rem;
     color: #fff;
   }
   header .NavEffect .TopBarContact .infoToggle div.right {

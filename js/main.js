@@ -3,17 +3,14 @@
 const NavEffect = document.querySelector('.NavEffect');
 const navbar = document.querySelector('.navbar');
 
-const widthWindow = $(window).width();
-window.addEventListener('scroll', fixNav)
-
 function fixNav() {
     if(window.scrollY > NavEffect.offsetHeight + 250) {
         navbar.classList.add('active');
-        navbar.classList.add("transform");
     } else {
         navbar.classList.remove('active')
     }
 }
+window.addEventListener('scroll', fixNav);
 
 // -----------scroll background-image effect-----------
 document.getElementById("body").onscroll = function myFunction() {  
