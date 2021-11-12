@@ -1,0 +1,153 @@
+header {
+    & .navbar {
+        max-width: 1160px;
+        margin: auto;
+        & .SearchFixed {
+            display: none;
+            & .btn-primary {
+                background-color: $color-primary;
+                border-color: $color-primary;
+            }
+        }
+
+        & .navbar-collapse {
+            justify-content: space-between;
+        }
+    }
+    & .navbar .nav-item {
+        margin: 0 1rem 0 0;
+    }
+}
+
+
+.ContainerNavbar .navbar-dark .navbar-nav {
+    & .nav-item:hover .nav-link {
+        color: $color-primary-light;
+    }
+    & .nav-item.active .nav-link {
+        color: $color-primary-light;
+        border-bottom: $color-primary-light solid 3px;
+    }
+    & .nav-link {
+        color: rgba(255,255,255,1);
+        font-weight: 700;
+        transition: ease-in 0.25s;
+        &.dropdown-toggle::after {
+            transition: transform 0.5s ease;
+        }
+    }
+    & .nav-item .dropdown-menu {   
+        position: absolute;
+        width: 14rem;
+        background-color: #3a3c42;
+        border-top: 3px solid $color-primary-light;
+        top: 88%;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid $color-primary-light;
+            top: -3.5%;
+            left: 10%;
+        }
+        &.dropdown-menu-2 {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid $color-primary-light;
+                top: -7.88%;
+                left: 10%;
+            }
+        }
+        & .dropdown-item {
+            transition: 0.75s cubic-bezier(.190,1,.220,1);
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.25rem 0.8rem;
+            &:hover {
+                color: $color-primary-light;
+                background-color: transparent;
+            }
+            & .iconify {
+                padding-bottom: 0.2rem;
+            }
+        }
+        animation: fadeIn_2 1.5s cubic-bezier(.190,1,.220,1);
+    }
+} 
+
+.ContainerNavbar.active {
+    position: fixed;
+    top: 0;
+    font-size: 0.9rem;
+    background-color: rgb(206, 197, 197);
+    width: 100%;
+    box-shadow: 0 0.1rem 1rem rgb(34, 34, 34);
+    & .navbar {
+        padding: 0.3rem 1rem;
+        & .navbar-brand img {
+            width: 8.75rem;
+        }
+        & .nav-item:hover .nav-link {
+            color: $color-primary;
+        }
+        & .nav-item.active .nav-link {
+            color: $color-primary;
+            border-bottom: $color-primary 3px solid;
+        }
+        & .nav-link {
+            color: #271d1d;
+        }
+        & .dropdown .dropdown-menu {
+            background-color: #fff;
+            & .dropdown-item {
+                color: #444;
+                &:hover {
+                    color: $color-primary;
+                    background-color: transparent;
+                }
+            }
+        }
+        & .SearchFixed {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    
+    .ContainerNavbar .navbar {
+        padding: 0.5rem 1rem;
+        & .navbar-nav .nav-item.active .nav-link {
+            border-bottom: none;
+        }
+        & .navbar-toggler {
+            color: #000000;
+        }
+        & .navbar-nav .nav-item .dropdown-menu {
+            position: relative;
+            width: 100%;
+        }
+    }
+    .ContainerNavbar.active {
+        
+    }
+}
+@media (min-width: 993px) {
+    .navbar .navbar-nav .dropdown:hover {
+        & .dropdown-toggle::after{
+            transform: rotate(180deg);
+        }
+        &>.dropdown-menu {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+#header__slider {
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+    & .carousel-inner {
+        width: 100%;
+        & .carousel-item {
+            color: #fff;
+            & .content {
+                & h1 {
+                    font-size: 3.5rem;
+                }
+                & .text {
+                    font-size: 1.25rem;
+                }
+                width: 50%;
+                margin-left: 15%;
+                margin-top: 5%;
+                &--btn{
+                    padding: 15px 30px;
+                    color: #fff;
+                    transition: 0.3s ease-in;
+                    background-color: $color-primary;
+                    &--right{
+                        background-color: $color-primary-dark;
+                    }
+                }
+                &--btn--left:hover  {
+                    background-color: $color-primary-light-hover;
+                }
+                &--btn--right:hover  {
+                    background-color: $color-primary-dark-hover;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 479px) {
+    #header__slider .carousel-inner .carousel-item {
+        & .content {
+            width: 70%;
+            margin-top: 8%;
+            & h1 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            & .text {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            & .content--btn {
+                font-size: 0.8rem;
+                padding: 8px 6px;
+            }
+        }
+    }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+    header #header__slider .carousel-inner .carousel-item {
+        & .content {
+            width: 70%;
+            & h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+            }
+            & .text {
+                font-size: 1.1rem;
+            }
+            & .content--btn {
+                font-size: 0.8rem;
+                padding: 15px 23px;
+            }
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+    header {
+        & #header__slider .carousel-inner .carousel-item {
+            & .content {
+                width: 62%;
+                & h1 {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}

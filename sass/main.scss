@@ -1,243 +1,16 @@
 @import "./abstracts/variables";
-@import "./base/animations";
 @import "./abstracts/mixins";
 
-body {
-    overflow-x: hidden;
-}
-header {
-    position: relative;
-    background-image: url(../images/bg1.jpeg);
-    @include imageJustify();
-    height: 95vh;
-    background-color: rgba($color: #000000, $alpha: .5);
-    & .separate-nav {
-        position: absolute;
-        width: 100%;
-        height: 0.5px;
-        background-color: #fff;
-        top: 77px;
-    }
-    & #header__slider {
-        z-index: 2;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 50%;
-        & .carousel-inner {
-            width: 100%;
-            & .carousel-item {
-                color: #fff;
-                & .content {
-                    & h1 {
-                        font-size: 3.5rem;
-                    }
-                    & .text {
-                        font-size: 1.25rem;
-                    }
-                    width: 50%;
-                    margin-left: 15%;
-                    margin-top: 5%;
-                    &--btn{
-                        padding: 15px 30px;
-                        color: #fff;
-                        transition: 0.3s ease-in;
-                        background-color: $color-primary;
-                        &--right{
-                            background-color: $color-primary-dark;
-                        }
-                    }
-                    &--btn--left:hover  {
-                        background-color: $color-primary-light-hover;
-                    }
-                    &--btn--right:hover  {
-                        background-color: $color-primary-dark-hover;
-                    }
-                }
-            }
-        }
-    }
+@import "./base/animations";
+@import "./base/reset";
 
-    & .cover-lay {
-        content: "";
-        position: absolute;
-        background-color: rgba($color: #0f0f0f, $alpha: .5);
-        z-index: 1;
-        width: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    & .container-fluid {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 0;
-        & .navbar .btn-close {
-            display: none;
-            position: absolute;
-            color: $color-primary;
-            opacity: 0.8;
-            right: 13px;
-            top: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-        & .SearchContainer {
-            display: flex;
-            justify-content: end;
-            & .search {
-                margin-right: 1rem;
-                & .btn-primary {
-                    background-color: $color-primary;
-                    border-color: $color-primary;
-                }
-            }
-        }
-        & .TopBarContact {
-            & .infoToggle {
-                display: none;
-            }
-        }
-        & .contact__info {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            &--time, &--phone, &--address {
-                margin-left: 0.5rem;
-            }
-            & .contact__info--phone {
-                & .content--heading {
-                    font-weight: 500;
-                }
-            }
-            & .iconify {
-                width: 4rem;
-                font-size: 3.5rem;
-                color: $color-primary;
-            }
-            & .content {
-                color: #fff;
-                & a {
-                    color: #fff;     
-                    &.content--sub {
-                        color: rgb(196, 191, 191);
-                    }
-                }
-                & h6 {
-                    margin-bottom: .1rem;
-                }
-                & p {
-                    line-height: 1.3;
-                    color: rgb(196, 191, 191);
-                }
-            }
-        }
-    }
-    & .contact__info {
-        max-width: 1160px;
-        margin: 0;
-    }
-    & .navbar {
-        max-width: 1160px;
-        margin: auto;
-    }
-    & .navbar .nav-item {
-        margin: 0 1rem 0 0;
-    }
-    & .navbar.active {
-        position: fixed;
-        top: 0;
-        font-size: 0.9rem;
-        background-color: rgb(206, 197, 197);
-        width: 100%;
-        box-shadow: 0 0.1rem 1rem rgb(34, 34, 34);
-        max-width: inherit;
-        & .navbar-brand img {
-            width: 8.75rem;
-        }
-        & .navbar-nav {
-            & .nav-link {
-                color: #271d1d;
-            }
-            & .dropdown .dropdown-menu {
-                background-color: #fff;
-                & .dropdown-item {
-                    color: #444;
-                }
-            }
-        }
-    }
-}
-a:hover {
-    text-decoration: none;
-}
+@import "./components/slider";
 
-header .navbar-dark .navbar-nav {
-    & .nav-item:hover .nav-link {
-        color: $color-primary-light;
-    }
-    & .nav-item.active .nav-link {
-        color: $color-primary-light;
-        border-bottom: $color-primary-light solid 3px;
-    }
-    & .nav-link {
-        color: rgba(255,255,255,1);
-        font-weight: 700;
-        transition: ease-in 0.25s;
-        &.dropdown-toggle::after {
-            transition: transform 0.5s ease;
-        }
-    }
-    & .nav-item .dropdown-menu {   
-        position: absolute;
-        width: 14rem;
-        background-color: #3a3c42;
-        border-top: 3px solid $color-primary-light;
-        top: 88%;
-        &::before {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 5px solid $color-primary-light;
-            top: -3.5%;
-            left: 10%;
-        }
-        &.dropdown-menu-2 {
-            &::before {
-                content: "";
-                position: absolute;
-                width: 0;
-                height: 0;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
-                border-bottom: 5px solid $color-primary-light;
-                top: -7.88%;
-                left: 10%;
-            }
-        }
-        & .dropdown-item {
-            transition: 0.75s cubic-bezier(.190,1,.220,1);
-            color: #fff;
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 0.25rem 0.8rem;
-            &:hover {
-                color: $color-primary-light;
-                background-color: transparent;
-            }
-            & .iconify {
-                padding-bottom: 0.2rem;
-            }
-        }
-        animation: fadeIn_2 1.5s cubic-bezier(.190,1,.220,1);
-    }
-} 
+@import "./layout/header";
+@import "./layout/navbar";
+@import "./layout/footer";
+
+
 
 // common-feature
 
@@ -343,6 +116,18 @@ header .navbar-dark .navbar-nav {
             background-color: $color-primary ;
             margin-top: 0.5rem;
         }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .common-feature .outstanding .content__header--title {
+        font-size: 2.3rem;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 575px) {
+    .common-feature .outstanding .content__header--title {
+        font-size: 2.75rem;
     }
 }
 
@@ -549,6 +334,12 @@ header .navbar-dark .navbar-nav {
     }
 }
 
+@media screen and (max-width: 479px) {
+    .testimonial .container__heading h2 {
+        font-size: 2.3rem;
+    }
+}
+
 // contact us
 
 .contact-us {
@@ -569,6 +360,17 @@ header .navbar-dark .navbar-nav {
             & h2 {
                 text-transform: uppercase;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .contact-us .content {
+        & a {
+            padding: 0.5rem 1rem;
+        }
+        & .heading h2 {
+            font-size: 1.5rem;
         }
     }
 }
@@ -660,6 +462,12 @@ header .navbar-dark .navbar-nav {
     }
 }
 
+@media screen and (max-width: 479px) {
+    .services .container__heading h2 {
+        font-size: 2.3rem;
+    }
+}
+
 // section map
 .map {
     & .container-map {
@@ -740,353 +548,5 @@ header .navbar-dark .navbar-nav {
 @media (max-width: 768px){
     .map iframe {
         height: 500px;
-    }
-}
-
-// footer section
-
-footer {
-    position: relative;
-    padding-top: 4rem;
-    background-image: url("../images/device-dental.jpg");
-    background-attachment: fixed;
-    @include imageJustify;
-    color: #fff;
-    & a {
-        color: #fff;
-    }
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba($color-primary-dark, $alpha: .95);
-    }
-    & .header {
-        text-transform: uppercase;
-        font-weight: 500;
-    }
-    & .dash {
-        width: 4rem;
-        height: 2px;
-        background-color: #ffffff;
-    }
-    & .content {
-        margin-top: 1rem;
-        & > ul {
-            list-style-type: none;
-            padding: 0;
-            & li {
-                text-transform: capitalize;
-                &:not(:first-child) {
-                    padding-top: 0.5rem;
-                }
-                & a {
-                    transition: 0.25s ease-in;
-                    font-weight: 500;
-                    &.title {
-                        @include UnderlineLinkHover;
-                        &:hover {
-                            color: $color-primary-light;
-                        }
-                    }
-                }
-            }
-        }
-        & .footer--contact {
-            float: right;
-            margin: 0 1rem 1rem;
-            & a {
-                position: relative;
-                &:not(:last-child){
-                    margin-right: 1rem;
-                }
-                display: inline-block;
-                width: 2.5rem;
-                height: 2.5rem;
-                font-size: 2rem;
-                color: #00a2ff;
-                background-color: #ffffff;
-                border-radius: 50%;
-                text-align: center;
-                
-                & .iconify {
-                    margin-top: -1.0625rem;
-                }
-                &::before {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 50%;
-                    border: 1px solid #ffffff;
-                    background-color: $color-green-dark;
-                    mix-blend-mode: hard-light;
-                    transition: all 0.3s ease;
-                    transform-origin: center;
-                    transform: scale(1);
-                }
-                &:hover {
-                    &::before {
-                        transform: scale(0);
-                    }
-                    color: #00B6FF;
-                }
-            }
-        }
-    }
-    & .copyright {
-        position: relative;
-        background-color: $color-green-dark;
-        height: 4rem;
-        text-align: center;
-        & .content {
-            transform: translateY(15%);
-            & a {
-                color: $color-primary-light;
-            }
-        }
-    }
-}
-@media screen and (max-width: 479px) {
-    header #header__slider .carousel-inner .carousel-item {
-        & .content {
-            width: 70%;
-            margin-top: 8%;
-            & h1 {
-                font-size: 1.4rem;
-                margin-bottom: 1rem;
-            }
-            & .text {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-            }
-            & .content--btn {
-                font-size: 0.8rem;
-                padding: 8px 6px;
-            }
-        }
-    }
-    header .NavEffect {
-        & .SearchContainer .search {
-            justify-content: end;
-        }
-        & .SearchContainer {
-            & .TopBarContact {
-                border: none;
-                & .infoToggle div.left .iconify {
-                    font-size: 1.9rem;
-                    padding-top: 0.3rem;
-                    padding-left: 0.2rem;
-                }
-            }
-            & .search {
-                & .form-control {
-                    width: 60%;
-                }
-                & .btn {
-                    padding: 0.375rem;
-                }
-            }
-        }
-        & .SearchContainer .TopBarContact .contact__info {
-            width: 268px;
-        }
-    }
-    // header .NavEffect
-    .common-feature .outstanding .content__header--title {
-        font-size: 2.3rem;
-    }
-    .testimonial .container__heading h2 {
-        font-size: 2.3rem;
-    }
-    .contact-us .content {
-        & a {
-            padding: 0.5rem 1rem;
-        }
-        & .heading h2 {
-            font-size: 1.5rem;
-        }
-    }
-    .services .container__heading h2 {
-        font-size: 2.3rem;
-    }
-}
-@media (min-width: 480px) and (max-width: 575px) {
-    header #header__slider .carousel-inner .carousel-item {
-        & .content {
-            width: 70%;
-            & h1 {
-                font-size: 2.2rem;
-                margin-bottom: 1.5rem;
-            }
-            & .text {
-                font-size: 1.1rem;
-            }
-            & .content--btn {
-                font-size: 0.8rem;
-                padding: 15px 23px;
-            }
-        }
-    }
-    .SearchContainer .search {
-        margin-left: 0.7rem;
-        & .form-control {
-            width: 68%;
-        }
-    }
-
-    .common-feature .outstanding .content__header--title {
-        font-size: 2.75rem;
-    }
-}
-@media (min-width: 576px) and (max-width: 992px) {
-    header {
-        & #header__slider .carousel-inner .carousel-item {
-            & .content {
-                width: 62%;
-                & h1 {
-                    font-size: 3rem;
-                }
-            }
-        }
-    }
-}
-@media (max-width: 992px) {
-    header {
-        & .separate-nav {
-            display: none;
-        }
-        & .NavEffect {
-            background-color: rgba(80, 80, 80, 0.9);
-            & .SearchContainer {
-                justify-content: space-between;
-            }
-            & .navbar {
-                width: 100%;
-                padding: 0.5rem 1rem;
-                & .navbar-nav .nav-item.active .nav-link {
-                    border-bottom: none;
-                }
-                & .navbar-toggler {
-                    color: #000000;
-                }
-            }
-            & .TopBarContact {
-                position: relative;
-                width: 72px;
-                height: 36px;
-                // border: 1px solid $color-primary-light;
-                margin-top: 0.9rem;
-                z-index: 10;
-                margin: 1rem 0 1rem 1rem;
-                & .infoToggle {
-                    position: relative;
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    cursor: pointer;
-                    transition: 0.5s ease;
-                    & div {
-                        position: absolute;
-                        width: 50%;
-                        height: 100%;
-                        font-size: 2rem;
-                        border: 1px solid $color-primary-light;
-                        &.left {
-                            background-color: $color-primary-light;
-                            & .iconify {
-                                transform: translateY(-40%);
-                                padding: 0.3rem 0.1rem 0 0.2rem;
-                                color: #fff;
-                            }
-                        }
-                        &.right {
-                            right: 0;
-                            font-size: 1.5rem;
-                            text-align: center;
-                            & .iconify {
-                                margin-bottom: 25%;
-                                color: $color-primary-light;
-                                transition: transform 0.5s ease;
-                            }
-                        }
-                    }
-                    &.active {
-                        & div.left {
-                            background-color: transparent;
-                            & .iconify {
-                                color: $color-primary-light;
-                            }
-                        }
-                        & div.right {
-                            background-color: $color-primary-light;
-                            & .iconify {
-                                color: #fff;
-                                transform: rotate(180deg);
-                            }
-                        }
-                    }
-                }
-                & .contact__info {
-                    position: absolute;
-                    top: 142%;
-                    // display: none;
-                    opacity: 0;
-                    visibility: hidden;
-                    flex-direction: column;
-                    border: 1px solid $color-primary-light;
-                    width: 320px;
-                    background-color: #1d1f27;
-                    align-items: flex-start;
-                    padding: 0.3rem 1rem;
-                    transition: opacity 0.5s ease, visibility 0.5s ease;
-                    &--time, &--phone, &--address {
-                        border-bottom: 1px solid rgb(51, 49, 49);
-                        font-size: 0.9rem;
-                        padding: 10px 0;
-                        width: 100%;
-                        margin-left: 0;
-                    }
-                    &--address {
-                        border-bottom: none;
-                    }
-                }
-                & .contact__info.active {
-                    display: block;
-                    opacity: 1;
-                    visibility: visible;
-                }
-            }
-        }
-        & .navbar-dark .navbar-nav .nav-item .dropdown-menu {
-            position: relative;
-            width: 100%;
-        }
-    }
-}
-@media (min-width: 768px) {
-    header .navbar-dark .navbar-nav .dropdown:hover {
-        & .dropdown-toggle::after{
-            transform: rotate(180deg);
-        }
-        &>.dropdown-menu {
-            display: block;
-        }
-    }
-}
-@media (min-width: 993px) and (max-width: 1066px) {
-    .SearchContainer .search {
-        & .form-control {
-            width: 9rem;
-            font-size: 0.9rem;
-        }
-        & .btn {
-            font-size: 0.8rem;
-            padding: 8px 3px;
-        }
     }
 }

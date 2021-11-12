@@ -2,12 +2,12 @@
 // -----------scroll Navbar effect-----------
 const NavEffect = document.querySelector('.NavEffect');
 const navbar = document.querySelector('.navbar');
-
+const ContainerNavbar = document.querySelector(".ContainerNavbar");
 function fixNav() {
     if(window.scrollY > NavEffect.offsetHeight + 250) {
-        navbar.classList.add('active');
+        ContainerNavbar.classList.add('active');
     } else {
-        navbar.classList.remove('active')
+        ContainerNavbar.classList.remove('active');
     }
 }
 window.addEventListener('scroll', fixNav);

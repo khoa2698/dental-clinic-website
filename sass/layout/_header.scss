@@ -1,0 +1,240 @@
+header {
+    position: relative;
+    background-image: url(../images/bg1.jpeg);
+    @include imageJustify();
+    height: 95vh;
+    background-color: rgba($color: #000000, $alpha: .5);
+    & .separate-nav {
+        position: absolute;
+        width: 100%;
+        height: 0.5px;
+        background-color: #fff;
+        top: 77px;
+    }
+
+    & .cover-lay {
+        content: "";
+        position: absolute;
+        background-color: rgba($color: #0f0f0f, $alpha: .5);
+        z-index: 1;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    & .container-fluid {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        & .SearchContainer {
+            display: flex;
+            justify-content: end;
+            & .search {
+                margin-right: 1rem;
+                & .btn-primary {
+                    background-color: $color-primary;
+                    border-color: $color-primary;
+                }
+            }
+        }
+        & .TopBarContact {
+            & .infoToggle {
+                display: none;
+            }
+        }
+        & .contact__info {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            &--time, &--phone, &--address {
+                margin-left: 0.5rem;
+            }
+            & .contact__info--phone {
+                & .content--heading {
+                    font-weight: 500;
+                }
+            }
+            & .iconify {
+                width: 4rem;
+                font-size: 3.5rem;
+                color: $color-primary;
+            }
+            & .content {
+                color: #fff;
+                & a {
+                    color: #fff;     
+                    &.content--sub {
+                        color: rgb(196, 191, 191);
+                    }
+                }
+                & h6 {
+                    margin-bottom: .1rem;
+                }
+                & p {
+                    line-height: 1.3;
+                    color: rgb(196, 191, 191);
+                }
+            }
+        }
+    }
+    & .contact__info {
+        max-width: 1160px;
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 479px) {
+    header .NavEffect {
+        & .SearchContainer .search {
+            justify-content: end;
+        }
+        & .SearchContainer {
+            & .TopBarContact {
+                border: none;
+                & .infoToggle div.left .iconify {
+                    font-size: 1.9rem;
+                    padding-top: 0.3rem;
+                    padding-left: 0.2rem;
+                }
+            }
+            & .search {
+                & .form-control {
+                    width: 60%;
+                }
+                & .btn {
+                    padding: 0.375rem;
+                }
+            }
+        }
+        & .SearchContainer .TopBarContact .contact__info {
+            width: 268px;
+        }
+    }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+    .SearchContainer .search {
+        margin-left: 0.7rem;
+        & .form-control {
+            width: 68%;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        & .separate-nav {
+            display: none;
+        }
+        & .NavEffect {
+            background-color: rgba(80, 80, 80, 0.9);
+            & .SearchContainer {
+                justify-content: space-between;
+            }
+            
+            & .TopBarContact {
+                position: relative;
+                width: 72px;
+                height: 36px;
+                margin-top: 0.9rem;
+                z-index: 10;
+                margin: 1rem 0 1rem 1rem;
+                & .infoToggle {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    transition: 0.5s ease;
+                    & div {
+                        position: absolute;
+                        width: 50%;
+                        height: 100%;
+                        font-size: 2rem;
+                        border: 1px solid $color-primary-light;
+                        &.left {
+                            background-color: $color-primary-light;
+                            & .iconify {
+                                transform: translateY(-40%);
+                                padding: 0.3rem 0.1rem 0 0.2rem;
+                                color: #fff;
+                            }
+                        }
+                        &.right {
+                            right: 0;
+                            font-size: 1.5rem;
+                            text-align: center;
+                            & .iconify {
+                                margin-bottom: 25%;
+                                color: $color-primary-light;
+                                transition: transform 0.5s ease;
+                            }
+                        }
+                    }
+                    &.active {
+                        & div.left {
+                            background-color: transparent;
+                            & .iconify {
+                                color: $color-primary-light;
+                            }
+                        }
+                        & div.right {
+                            background-color: $color-primary-light;
+                            & .iconify {
+                                color: #fff;
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                & .contact__info {
+                    position: absolute;
+                    top: 142%;
+                    opacity: 0;
+                    visibility: hidden;
+                    flex-direction: column;
+                    border: 1px solid $color-primary-light;
+                    width: 320px;
+                    background-color: #1d1f27;
+                    align-items: flex-start;
+                    padding: 0.3rem 1rem;
+                    transition: opacity 0.5s ease, visibility 0.5s ease;
+                    &--time, &--phone, &--address {
+                        border-bottom: 1px solid rgb(51, 49, 49);
+                        font-size: 0.9rem;
+                        padding: 10px 0;
+                        width: 100%;
+                        margin-left: 0;
+                    }
+                    &--address {
+                        border-bottom: none;
+                    }
+                }
+                & .contact__info.active {
+                    display: block;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 993px) and (max-width: 1066px) {
+    .SearchContainer .search {
+        & .form-control {
+            width: 9rem;
+            font-size: 0.9rem;
+        }
+        & .btn {
+            font-size: 0.8rem;
+            padding: 8px 8px;
+        }
+    }
+    header .container-fluid .SearchContainer {
+        justify-content: center;
+    }
+}
