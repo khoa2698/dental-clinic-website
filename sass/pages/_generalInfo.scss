@@ -1,7 +1,7 @@
 header {
     & .BackgroundImage {
         position: absolute;
-        background-image: url("./../../images/bg.png");
+        background-image: url("../images/bg.png");
         @include imageJustify;
         filter: blur(48px);
         width: 100%;
@@ -84,7 +84,7 @@ header {
     }
     & .BackgroundImage {
         position: absolute;
-        background-image: url("./../../images/device-dental.jpg");
+        background-image: url("../images/device-dental.jpg");
         @include imageJustify;
         filter: blur(5px);
         top: 0;
