@@ -2366,7 +2366,7 @@ footer .copyright .content a {
 
 header .BackgroundImage {
   position: absolute;
-  background-image: url("../../images/bg.png");
+  background-image: url("./../../images/bg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2468,7 +2468,7 @@ header.about-us {
 
 .statistics .BackgroundImage {
   position: absolute;
-  background-image: url("../../images/device-dental.jpg");
+  background-image: url("./../../images/device-dental.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
