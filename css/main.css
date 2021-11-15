@@ -79,8 +79,13 @@
 }
 
 .ElementScrollEffect.right {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+
+.ElementScrollEffect.bottom {
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
 }
 
 .ElementScrollEffect.show {
@@ -88,11 +93,229 @@
           animation: fadeIn 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   -webkit-transform: translateX(0);
           transform: translateX(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .dr-card.FadeInItem, .testimonial__content.FadeInItem, .sv-card.FadeInItem {
   -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms;
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
+.WrapContent {
+  position: relative;
+  z-index: 5;
+  top: 38%;
+  color: #ffffff;
+}
+
+.WrapContent .ContentOnBackGround {
+  width: 70%;
+}
+
+.WrapContent .ContentOnBackGround .heading--sub {
+  font-size: 1.5rem;
+}
+
+.WrapContent .ContentOnBackGround .heading--sub::first-letter {
+  text-transform: uppercase;
+}
+
+.WrapContent .ContentOnBackGround .dash {
+  display: block;
+  width: 10%;
+  height: 2px;
+  background-color: white;
+}
+
+.WrapContent .ContentOnBackGround .heading {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, right top, from(#22c7dd), to(#02C897));
+  background: linear-gradient(to right, #22c7dd, #02C897);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.WrapContent .ContentOnBackGround .text {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 479px) {
+  .WrapContent {
+    top: 41%;
+  }
+  .WrapContent .ContentOnBackGround {
+    width: 100%;
+  }
+  .WrapContent .ContentOnBackGround .heading--sub {
+    font-size: 1rem;
+  }
+  .WrapContent .ContentOnBackGround .dash {
+    width: 20%;
+  }
+  .WrapContent .ContentOnBackGround .heading {
+    font-size: 1.2rem;
+    word-spacing: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .WrapContent .ContentOnBackGround .text {
+    font-size: 0.8rem;
+  }
+  .WrapContent .ContentOnBackGround .content--btn {
+    font-size: 0.8rem;
+    margin-top: 0;
+    padding: 8px 12px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 575px) {
+  .WrapContent {
+    top: 42%;
+  }
+  .WrapContent .ContentOnBackGround {
+    width: 100%;
+  }
+  .WrapContent .ContentOnBackGround .heading--sub {
+    font-size: 1.3rem;
+  }
+  .WrapContent .ContentOnBackGround .heading {
+    font-size: 1.7rem;
+    word-spacing: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .WrapContent .ContentOnBackGround .text {
+    font-size: 0.9rem;
+  }
+  .WrapContent .ContentOnBackGround .content--btn {
+    font-size: 0.8rem;
+    margin-top: 0;
+    padding: 9px 14px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .WrapContent {
+    top: 40%;
+  }
+  .WrapContent .ContentOnBackGround {
+    width: 100%;
+  }
+  .WrapContent .ContentOnBackGround .heading--sub {
+    font-size: 1.3rem;
+  }
+  .WrapContent .ContentOnBackGround .heading {
+    font-size: 1.7rem;
+    word-spacing: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .WrapContent .ContentOnBackGround .text {
+    font-size: 1rem;
+  }
+  .WrapContent .ContentOnBackGround .content--btn {
+    margin-top: 0;
+    padding: 9px 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .WrapContent .ContentOnBackGround {
+    width: 100%;
+  }
+  .WrapContent .ContentOnBackGround .heading {
+    font-size: 2.5rem;
+    word-spacing: 0.5rem;
+  }
+  .WrapContent .ContentOnBackGround .text {
+    font-size: 1.2rem;
+  }
+  .WrapContent .ContentOnBackGround .content--btn {
+    margin-top: 0;
+  }
+}
+
+.WrapHeadingContent {
+  overflow-x: hidden;
+}
+
+.WrapHeadingContent .HeadingContent {
+  color: #000;
+}
+
+.WrapHeadingContent .HeadingContent .heading--sub {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.WrapHeadingContent .HeadingContent .heading--sub::first-letter {
+  text-transform: uppercase;
+}
+
+.WrapHeadingContent .HeadingContent .dash {
+  display: block;
+  width: 10%;
+  height: 2px;
+  background-color: #0CA0B5;
+}
+
+.WrapHeadingContent .HeadingContent .heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  background: -webkit-gradient(linear, left top, right top, from(#22c7dd), to(#02C897));
+  background: linear-gradient(to right, #22c7dd, #02C897);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.WrapHeadingContent .HeadingContent .text {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 479px) {
+  .WrapHeadingContent .HeadingContent .heading--sub {
+    font-size: 1.3rem;
+  }
+  .WrapHeadingContent .HeadingContent .dash {
+    width: 25%;
+  }
+  .WrapHeadingContent .HeadingContent .heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .WrapHeadingContent .HeadingContent .dash {
+    width: 21%;
+  }
 }
 
 body {
@@ -101,6 +324,36 @@ body {
 
 a:hover {
   text-decoration: none;
+}
+
+.content--btn {
+  padding: 15px 30px;
+  margin-top: 1rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.content--btn--left {
+  background-color: #0CA0B5;
+}
+
+.content--btn--right {
+  background-color: #106f80;
+}
+
+.content--btn:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+.content--btn--left:hover {
+  background-color: #1b6b75;
+}
+
+.content--btn--right:hover {
+  background-color: #0d393f;
 }
 
 #header__slider {
@@ -134,23 +387,8 @@ a:hover {
 }
 
 #header__slider .carousel-inner .carousel-item .content--btn {
-  padding: 15px 30px;
-  color: #fff;
-  -webkit-transition: 0.3s ease-in;
-  transition: 0.3s ease-in;
-  background-color: #0CA0B5;
-}
-
-#header__slider .carousel-inner .carousel-item .content--btn--right {
-  background-color: #106f80;
-}
-
-#header__slider .carousel-inner .carousel-item .content--btn--left:hover {
-  background-color: #1b6b75;
-}
-
-#header__slider .carousel-inner .carousel-item .content--btn--right:hover {
-  background-color: #0d393f;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
 }
 
 @media screen and (max-width: 479px) {
@@ -159,16 +397,17 @@ a:hover {
     margin-top: 8%;
   }
   #header__slider .carousel-inner .carousel-item .content h1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
   }
   #header__slider .carousel-inner .carousel-item .content .text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 1rem;
   }
   #header__slider .carousel-inner .carousel-item .content .content--btn {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     padding: 8px 6px;
+    margin-top: 0;
   }
 }
 
@@ -177,7 +416,7 @@ a:hover {
     width: 70%;
   }
   header #header__slider .carousel-inner .carousel-item .content h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
   header #header__slider .carousel-inner .carousel-item .content .text {
@@ -185,7 +424,7 @@ a:hover {
   }
   header #header__slider .carousel-inner .carousel-item .content .content--btn {
     font-size: 0.8rem;
-    padding: 15px 23px;
+    padding: 12px 16px;
   }
 }
 
@@ -194,7 +433,7 @@ a:hover {
     width: 62%;
   }
   header #header__slider .carousel-inner .carousel-item .content h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -220,7 +459,7 @@ header .cover-lay {
   content: "";
   position: absolute;
   background-color: rgba(15, 15, 15, 0.5);
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   top: 0;
   left: 0;
@@ -332,6 +571,9 @@ header .contact__info {
   header .NavEffect .SearchContainer .TopBarContact .contact__info {
     width: 268px;
   }
+  header .NavEffect .ContainerNavbar .navbar-brand img {
+    width: 9rem;
+  }
 }
 
 @media (min-width: 480px) and (max-width: 575px) {
@@ -340,6 +582,9 @@ header .contact__info {
   }
   .SearchContainer .search .form-control {
     width: 68%;
+  }
+  .NavEffect .ContainerNavbar .navbar-brand img {
+    width: 10rem;
   }
 }
 
@@ -487,8 +732,13 @@ header .navbar .navbar-collapse {
           justify-content: space-between;
 }
 
-header .navbar .nav-item {
-  margin: 0 1rem 0 0;
+header .navbar .nav-item:not(:last-child) {
+  margin: 0 1.5rem 0 0;
+}
+
+header .navbar .nav-item .nav-link {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .ContainerNavbar .navbar-dark .navbar-nav .nav-item:hover .nav-link {
@@ -566,6 +816,11 @@ header .navbar .nav-item {
   padding-bottom: 0.2rem;
 }
 
+.ContainerNavbar .navbar-dark .navbar-nav .nav-item .dropdown-menu .dropdown-item.active {
+  color: #22c7dd;
+  background-color: transparent;
+}
+
 .ContainerNavbar.active {
   position: fixed;
   top: 0;
@@ -603,6 +858,11 @@ header .navbar .nav-item {
 
 .ContainerNavbar.active .navbar .dropdown .dropdown-menu .dropdown-item {
   color: #444;
+}
+
+.ContainerNavbar.active .navbar .dropdown .dropdown-menu .dropdown-item.active {
+  color: #0CA0B5;
+  background-color: transparent;
 }
 
 .ContainerNavbar.active .navbar .dropdown .dropdown-menu .dropdown-item:hover {
@@ -852,7 +1112,7 @@ footer .copyright .content a {
 
 .common-feature .container__card.card--1 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -893,7 +1153,7 @@ footer .copyright .content a {
 
 .common-feature .container__card.card--2 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -934,7 +1194,7 @@ footer .copyright .content a {
 
 .common-feature .container__card.card--3 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -975,7 +1235,7 @@ footer .copyright .content a {
 
 .common-feature .container__card.card--4 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1185,7 +1445,7 @@ footer .copyright .content a {
 
 .dr-team .dr-card--1 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1240,7 +1500,7 @@ footer .copyright .content a {
 
 .dr-team .dr-card--2 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1295,7 +1555,7 @@ footer .copyright .content a {
 
 .dr-team .dr-card--3 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1345,7 +1605,7 @@ footer .copyright .content a {
 
 .dr-team .dr-card--4 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1507,6 +1767,7 @@ footer .copyright .content a {
 .contact-us .content a {
   background-color: #ffffff;
   padding: 13px 26px;
+  border-radius: 0.5rem;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
@@ -1631,7 +1892,7 @@ footer .copyright .content a {
 
 .services .container .sv-card--1 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1677,7 +1938,7 @@ footer .copyright .content a {
 
 .services .container .sv-card--2 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1723,7 +1984,7 @@ footer .copyright .content a {
 
 .services .container .sv-card--3 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1769,7 +2030,7 @@ footer .copyright .content a {
 
 .services .container .sv-card--4 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1815,7 +2076,7 @@ footer .copyright .content a {
 
 .services .container .sv-card--5 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1861,7 +2122,7 @@ footer .copyright .content a {
 
 .services .container .sv-card--6 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1907,7 +2168,7 @@ footer .copyright .content a {
 
 .services .container .sv-card--7 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -1953,7 +2214,7 @@ footer .copyright .content a {
 
 .services .container .sv-card--8 .icon-card {
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   width: 5rem;
   height: 5rem;
   background-color: #22c7dd;
@@ -2101,4 +2362,482 @@ footer .copyright .content a {
   .map iframe {
     height: 500px;
   }
+}
+
+header .BackgroundImage {
+  position: absolute;
+  background-image: url("../../images/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(48px);
+          filter: blur(48px);
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+header.about-us {
+  background-image: none;
+  height: 80vh;
+}
+
+.OurValues {
+  padding: 3.5rem 0;
+}
+
+.OurValues .value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1rem;
+  opacity: 0;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: scale 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms, -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms;
+  transition: scale 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms, -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms, scale 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms;
+  transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms, scale 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms, -webkit-transform 1s cubic-bezier(0.19, 1, 0.22, 1) 200ms;
+}
+
+.OurValues .value .icon {
+  margin-right: 1rem;
+}
+
+.OurValues .value .icon .iconify {
+  font-size: 3rem;
+  color: #0CA0B5;
+}
+
+.OurValues .value .content__heading {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.statistics {
+  position: relative;
+}
+
+.statistics .image {
+  padding-top: 3rem;
+}
+
+.statistics .image img {
+  width: 100%;
+}
+
+.statistics .ViewWorkingHour {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.statistics .ViewWorkingHour .content--btn {
+  text-align: center;
+  display: inline-block;
+  padding: 8px 12px;
+}
+
+.statistics .StatisticsContent {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #fff;
+}
+
+.statistics .StatisticsContent .number {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.statistics .StatisticsContent .heading {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.statistics .StatisticsContent .dash {
+  width: 20%;
+  height: 2px;
+  background-color: #fff;
+}
+
+.statistics .BackgroundImage {
+  position: absolute;
+  background-image: url("../../images/device-dental.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.statistics .BackgroundImage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 135, 170, 0.85);
+}
+
+.BoardOfDirectors {
+  padding: 5rem 0;
+  background-color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+.BoardOfDirectors .dr-card {
+  margin-top: 3rem;
+}
+
+.BoardOfDirectors .container .dr-card {
+  background-clip: content-box;
+  color: white;
+  opacity: 0;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.BoardOfDirectors .container .dr-card .container-img {
+  position: relative;
+}
+
+.BoardOfDirectors .container .dr-card .container-img .search-info {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  top: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #22c7dd;
+  font-size: 3rem;
+  text-align: center;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.BoardOfDirectors .container .dr-card .container-img .search-info .iconify {
+  height: 100%;
+}
+
+.BoardOfDirectors .container .dr-card .container-img:hover .search-info {
+  height: 100%;
+  opacity: 1;
+}
+
+.BoardOfDirectors .container .dr-card--contact {
+  float: right;
+  margin: 0 1rem 1rem;
+}
+
+.BoardOfDirectors .container .dr-card--contact a {
+  position: relative;
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  color: #00a2ff;
+  background-color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.BoardOfDirectors .container .dr-card--contact a:not(:last-child) {
+  margin-right: 0.3rem;
+}
+
+.BoardOfDirectors .container .dr-card--contact a .iconify {
+  margin-top: -1.0625rem;
+}
+
+.BoardOfDirectors .container .dr-card--contact a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  background-color: #005B88;
+  mix-blend-mode: hard-light;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.BoardOfDirectors .container .dr-card--contact a:hover {
+  color: #00B6FF;
+}
+
+.BoardOfDirectors .container .dr-card--contact a:hover::before {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.BoardOfDirectors .container img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.BoardOfDirectors .container .content {
+  position: relative;
+  margin: 2rem 1rem 0 1rem;
+}
+
+.BoardOfDirectors .container .content h3 {
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+.BoardOfDirectors .container .content p {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.BoardOfDirectors .dr-card--1 {
+  background-color: #0087AA;
+}
+
+.BoardOfDirectors .dr-card--1 .icon-card {
+  position: absolute;
+  z-index: 5;
+  width: 5rem;
+  height: 5rem;
+  background-color: #22c7dd;
+  border-radius: 50%;
+  -webkit-transform: translate(25%, -50%);
+          transform: translate(25%, -50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 2.8125rem;
+  width: 3rem;
+  height: 3rem;
+  background-size: 2rem;
+  top: -2rem;
+  border: none;
+  background-image: url("../images/dental-care.png");
+}
+
+.BoardOfDirectors .dr-card--1 .icon-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: solid 2px #22c7dd;
+  border-radius: 50%;
+  background: #8b7272;
+  mix-blend-mode: color-burn;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.BoardOfDirectors .dr-card--1 .icon-card:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.BoardOfDirectors .dr-card--1 .icon-card--2 {
+  left: 3.5rem;
+  background-image: url("../images/dental-implant.png");
+}
+
+.BoardOfDirectors .dr-card--2 {
+  background-color: #0087AA;
+}
+
+.BoardOfDirectors .dr-card--2 .icon-card {
+  position: absolute;
+  z-index: 5;
+  width: 5rem;
+  height: 5rem;
+  background-color: #22c7dd;
+  border-radius: 50%;
+  -webkit-transform: translate(25%, -50%);
+          transform: translate(25%, -50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 2.8125rem;
+  width: 3rem;
+  height: 3rem;
+  background-size: 2rem;
+  top: -2rem;
+  border: none;
+  background-image: url("../images/teeth-care.png");
+}
+
+.BoardOfDirectors .dr-card--2 .icon-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: solid 2px #22c7dd;
+  border-radius: 50%;
+  background: #8b7272;
+  mix-blend-mode: color-burn;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.BoardOfDirectors .dr-card--2 .icon-card:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.BoardOfDirectors .dr-card--2 .icon-card--2 {
+  left: 3.5rem;
+  background-image: url("../images/dental-care.png");
+}
+
+.BoardOfDirectors .dr-card--3 {
+  background-color: #0087AA;
+}
+
+.BoardOfDirectors .dr-card--3 .icon-card {
+  position: absolute;
+  z-index: 5;
+  width: 5rem;
+  height: 5rem;
+  background-color: #22c7dd;
+  border-radius: 50%;
+  -webkit-transform: translate(25%, -50%);
+          transform: translate(25%, -50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 2.8125rem;
+  width: 3rem;
+  height: 3rem;
+  background-size: 2rem;
+  top: -2rem;
+  border: none;
+  background-image: url("../images/tooth-white.png");
+}
+
+.BoardOfDirectors .dr-card--3 .icon-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: solid 2px #22c7dd;
+  border-radius: 50%;
+  background: #8b7272;
+  mix-blend-mode: color-burn;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.BoardOfDirectors .dr-card--3 .icon-card:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.JoinUs {
+  background-color: #1b6b75;
+}
+
+.JoinUs .WrapHeadingContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-x: visible;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.JoinUs .WrapHeadingContent .heading--sub {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.JoinUs .WrapHeadingContent .heading {
+  font-size: 2rem;
+}
+
+.JoinUs .WrapHeadingContent .content--btn {
+  display: inline-block;
+  background-image: -webkit-gradient(linear, left top, right top, from(#22c7dd), to(#02C897));
+  background-image: linear-gradient(to right, #22c7dd, #02C897);
+  margin-top: 0;
+  text-align: center;
+}
+
+.JoinUs .WrapHeadingContent .content--btn:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#22c7dd), to(#02C897));
+  background-image: linear-gradient(to right, #22c7dd, #02C897);
+}
+
+@media screen and (max-width: 479px) {
+  .JoinUs .WrapHeadingContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .JoinUs .WrapHeadingContent .heading--sub {
+    font-size: 1rem;
+  }
+  .JoinUs .WrapHeadingContent .heading {
+    font-size: 1.4rem;
+  }
+  .JoinUs .WrapHeadingContent .content--btn {
+    padding: 8px 10px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+  .JoinUs .WrapHeadingContent .content--btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
+
+.MakeAppointment {
+  padding: 3.5rem 0;
 }

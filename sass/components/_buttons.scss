@@ -1,0 +1,25 @@
+.content {
+    &--btn{
+        padding: 15px 30px;
+        margin-top: 1rem;
+        color: #fff;
+        border-radius: 0.5rem;
+        transition: 0.3s ease-in;
+        &--left {
+            background-color: $color-primary;
+        }
+        &--right{
+            background-color: $color-primary-dark;
+        }
+        &:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+    &--btn--left:hover  {
+        background-color: $color-primary-light-hover;
+    }
+    &--btn--right:hover  {
+        background-color: $color-primary-dark-hover;
+    }
+}

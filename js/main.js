@@ -1,4 +1,71 @@
 
+
+// ----------------------show/hide Top contactInfo-----------------
+const infoToggle = document.querySelector(".infoToggle");
+const contactInfo = document.querySelector(".contact__info");
+
+infoToggle.addEventListener("click", () => {
+    contactInfo.classList.toggle("active");
+    infoToggle.classList.toggle("active");
+})
+
+//------------------Increment Counter ----------------
+const numbers = document.querySelectorAll('.number')
+for(let i = 0; i < numbers.length; i++) {
+    function checkCountNumber() {
+        const HeightWindow = window.innerHeight
+        const number = numbers[i].getBoundingClientRect().top
+        if (number < HeightWindow) {
+            numbers[i].innerHTML = "0"
+            const target = +numbers[i].getAttribute("data-target")
+            const increment = target / 8
+    
+            const updaterCounter = () => {
+                const c = +numbers[i].innerHTML
+                if(c < target) {
+                    numbers[i].innerHTML = `${Math.ceil(c + increment)}`
+                    setTimeout(updaterCounter, 100)
+                } else {
+                    numbers[i].innerHTML = target
+                }
+                window.removeEventListener("scroll", checkCountNumber)
+            }
+            updaterCounter()
+        }
+    
+    }
+    window.addEventListener('scroll', checkCountNumber)
+    checkCountNumber()
+
+}
+
+//-------------- appear item ------------
+const FadeInItems = document.querySelectorAll(".FadeInItem")
+function scrollEffect2() {
+    const triggerBottom = window.innerHeight / 9 * 8
+    FadeInItems.forEach(FadeInItem => {
+        const FadeInItemTop = FadeInItem.getBoundingClientRect().top
+        if(FadeInItemTop < triggerBottom) {
+            FadeInItem.style.opacity = "1";
+            FadeInItem.style.transform = "scale(1)";
+        }
+    })
+}
+window.addEventListener('scroll', scrollEffect2)
+scrollEffect2()
+// -------------appear when scroll------------
+const ElementScrolls = document.querySelectorAll('.ElementScrollEffect')
+function ElementScrollEffect() {
+    const triggerBottom = window.innerHeight / 9 * 8
+    ElementScrolls.forEach(ElementScroll => {
+            const ElementScrollTop = ElementScroll.getBoundingClientRect().top
+            if(ElementScrollTop < triggerBottom) {
+                ElementScroll.classList.add('show')
+            }
+    })
+}
+window.addEventListener('scroll', ElementScrollEffect)
+ElementScrollEffect()
 // -----------scroll Navbar effect-----------
 const NavEffect = document.querySelector('.NavEffect');
 const navbar = document.querySelector('.navbar');
@@ -31,46 +98,16 @@ var tmp = document.createElement("span");
 tmp.innerHTML = '&#x2039;';
 btn_toggle.setAttribute('data-icon', tmp.innerText);
 
+//  -----------show/hide working hours-------------
 btn_toggle.addEventListener("click", () => {
     containerWorkingHour.classList.toggle("closed");
     btn_toggle.classList.toggle("rotate");
 })
 
-const ElementScrolls = document.querySelectorAll('.ElementScrollEffect')
-function ElementScrollEffect() {
-    const triggerBottom = window.innerHeight / 9 * 8
-    ElementScrolls.forEach(ElementScroll => {
-            const ElementScrollTop = ElementScroll.getBoundingClientRect().top
-            if(ElementScrollTop < triggerBottom) {
-                ElementScroll.classList.add('show')
-            }
-    })
-}
-window.addEventListener('scroll', ElementScrollEffect)
-ElementScrollEffect()
 
-//-------------- appear item ------------
-const FadeInItems = document.querySelectorAll(".FadeInItem")
-function scrollEffect2() {
-    const triggerBottom = window.innerHeight / 9 * 8
-    FadeInItems.forEach(FadeInItem => {
-        const FadeInItemTop = FadeInItem.getBoundingClientRect().top
-        if(FadeInItemTop < triggerBottom) {
-            FadeInItem.style.opacity = "1";
-            FadeInItem.style.transform = "scale(1)";
-        }
-    })
-}
-window.addEventListener('scroll', scrollEffect2)
-scrollEffect2()
 
-const infoToggle = document.querySelector(".infoToggle");
-const contactInfo = document.querySelector(".contact__info");
-console.log(contactInfo)
-infoToggle.addEventListener("click", () => {
-    contactInfo.classList.toggle("active");
-    infoToggle.classList.toggle("active");
-})
+
+
 
 
 // const SequentialAppears = document.querySelectorAll('.SequentialAppear')

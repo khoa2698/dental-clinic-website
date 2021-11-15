@@ -1,0 +1,180 @@
+.WrapContent {
+    position: relative;
+    z-index: 5;
+    top: 38%;
+    color: #ffffff;
+
+    & .ContentOnBackGround {
+        width: 70%;
+        & .heading--sub {
+            font-size: 1.5rem;
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+        & .dash {
+            display: block;
+            width: 10%;
+            height: 2px;
+            background-color: white;
+        }
+        & .heading {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(to right, $color-primary-light, #02C897);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        & .text {
+            font-size: 1.25rem;
+        }
+    }
+}
+@media screen and (max-width: 479px) {
+    .WrapContent {
+        top: 41%;
+        & .ContentOnBackGround {
+            width: 100%;
+            & .heading--sub {
+                font-size: 1rem;
+            }
+            & .dash {
+                width: 20%;
+            }
+            & .heading {
+                font-size: 1.2rem;
+                word-spacing: 0.5rem;
+                margin-top: 0.5rem;
+            }
+            & .text {
+                font-size: 0.8rem;
+            }
+            & .content--btn {
+                font-size: 0.8rem;
+                margin-top: 0;
+                padding: 8px 12px;
+            }
+        }
+    }
+}
+@media (min-width: 480px) and (max-width: 575px) {
+    .WrapContent {
+        top: 42%;
+        & .ContentOnBackGround {
+            width: 100%;
+            & .heading--sub {
+                font-size: 1.3rem;
+            }
+            & .heading {
+                font-size: 1.7rem;
+                word-spacing: 0.5rem;
+                margin-top: 0.5rem;
+            }
+            & .text {
+                font-size: 0.9rem;
+            }
+            & .content--btn {
+                font-size: 0.8rem;
+                margin-top: 0;
+                padding: 9px 14px;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .WrapContent {
+        top: 40%;
+        & .ContentOnBackGround {
+            width: 100%;
+            & .heading--sub {
+                font-size: 1.3rem;
+            }
+            & .heading {
+                font-size: 1.7rem;
+                word-spacing: 0.5rem;
+                margin-top: 0.5rem;
+            }
+            & .text {
+                font-size: 1rem;
+            }
+            & .content--btn {
+                margin-top: 0;
+                padding: 9px 14px;
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .WrapContent {
+        & .ContentOnBackGround {
+            width: 100%;
+            & .heading {
+                font-size: 2.5rem;
+                word-spacing: 0.5rem;
+            }
+            & .text {
+                font-size: 1.2rem;
+            }
+            & .content--btn {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.WrapHeadingContent {
+    overflow-x: hidden;
+    & .HeadingContent {
+        color: #000;
+        & .heading--sub {
+            font-size: 1.5rem;
+            font-weight: 300;
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+        & .dash {
+            display: block;
+            width: 10%;
+            height: 2px;
+            background-color: $color-primary;
+        }
+        & .heading {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(to right, $color-primary-light, #02C897);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        & .text {
+            font-size: 1.25rem;
+        }
+    }
+}
+@media screen and (max-width: 479px) {
+    .WrapHeadingContent {
+        & .HeadingContent {
+            & .heading--sub {
+                font-size: 1.3rem;
+            }
+            & .dash {
+                width: 25%;
+            }
+            & .heading {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .WrapHeadingContent {
+        & .HeadingContent {
+            & .dash {
+                width: 21%;
+            }
+        }
+    }
+}

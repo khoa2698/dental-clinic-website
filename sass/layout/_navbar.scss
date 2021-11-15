@@ -15,7 +15,13 @@ header {
         }
     }
     & .navbar .nav-item {
-        margin: 0 1rem 0 0;
+        &:not(:last-child) {
+            margin: 0 1.5rem 0 0;
+        }
+        & .nav-link {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
@@ -79,6 +85,10 @@ header {
             & .iconify {
                 padding-bottom: 0.2rem;
             }
+            &.active {
+                color: $color-primary-light;
+                background-color: transparent;
+            }
         }
         animation: fadeIn_2 1.5s cubic-bezier(.190,1,.220,1);
     }
@@ -110,6 +120,10 @@ header {
             background-color: #fff;
             & .dropdown-item {
                 color: #444;
+                &.active {
+                    color: $color-primary;
+                    background-color: transparent;
+                }
                 &:hover {
                     color: $color-primary;
                     background-color: transparent;
