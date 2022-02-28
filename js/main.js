@@ -1,4 +1,20 @@
 
+var sideBar = document.getElementsByClassName("sideBar");
+var sticky = sideBar.offsetTop;
+
+function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      sideBar.classList.add("sticky")
+    } else {
+        if (document.getElementsByClassName("sideBar sticky")) {
+            sideBar.classList.remove("sticky");
+        }
+    }
+}
+
+if (sideBar && sticky) {
+    window.onscroll = function() {myFunction()};
+}
 
 // ----------------------show/hide Top contactInfo-----------------
 const infoToggle = document.querySelector(".infoToggle");
@@ -80,7 +96,9 @@ function fixNav() {
 window.addEventListener('scroll', fixNav);
 
 // -----------scroll background-image effect-----------
-document.getElementById("body").onscroll = function myFunction() {  
+let bodyId = document.getElementById("body");
+if (bodyId) {
+    bodyId.onscroll = function myFunction() {  
     var scrollToTop = document.scrollingElement.scrollTop;
     var targets = document.querySelectorAll(".BgScrollEffect");
     var xValue = "center";
@@ -90,45 +108,19 @@ document.getElementById("body").onscroll = function myFunction() {
         target.style.backgroundPosition = xValue + " " + yValue + "px";
     })
   }
+}
   
 // -----------change pseudo_element's content-----------
 var containerWorkingHour = document.querySelector(".containerWorkingHour")
 var btn_toggle = document.querySelector('#btn-toggle');
 var tmp = document.createElement("span");
 tmp.innerHTML = '&#x2039;';
-btn_toggle.setAttribute('data-icon', tmp.innerText);
+if (btn_toggle) {
+    btn_toggle.setAttribute('data-icon', tmp.innerText);
+    //  -----------show/hide working hours-------------
+    btn_toggle.addEventListener("click", () => {
+        containerWorkingHour.classList.toggle("closed");
+        btn_toggle.classList.toggle("rotate");
+    })
+}
 
-//  -----------show/hide working hours-------------
-btn_toggle.addEventListener("click", () => {
-    containerWorkingHour.classList.toggle("closed");
-    btn_toggle.classList.toggle("rotate");
-})
-
-
-
-
-
-
-
-// const SequentialAppears = document.querySelectorAll('.SequentialAppear')
-// function SequentialAppear() {
-//     const triggerBottom = window.innerHeight / 9 * 8
-//     SequentialAppears.forEach(item => {
-//             const itemTop = item.getBoundingClientRect().top
-//             if(itemTop < triggerBottom) {
-//                 const tests = document.querySelector('.SequentialAppear').querySelectorAll(".test");
-//                 var index = 0;
-//                 setInterval(()=> {
-//                     if (index < tests.length) {
-//                         const element = tests[index];
-//                         element.style.opacity = "1";
-//                         index ++;
-//                     } else {
-//                         clearInterval();
-//                     }
-//                 }, 250);
-//             }
-//     })
-// }
-// window.addEventListener('scroll', SequentialAppear)
-// SequentialAppear()

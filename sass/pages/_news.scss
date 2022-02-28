@@ -1,0 +1,47 @@
+.sideBar {
+    background-color: #F0F5F3;
+    font-size: 1.6rem;
+    & .navbar-brand {
+        font-size: 1.6rem;
+    }
+    & .navbar-collapse {
+        display: block;
+        & .dropdown-menu a{
+            font-size: 1.4rem;
+        }
+    }
+}
+.thumbnail {
+    margin-top: 30px;
+    // height: 100%;
+    // font-family: Merriweather;
+    -webkit-transition: 0.25s ease-in;
+    transition: 0.25s ease-in;
+    &:hover {
+        box-shadow: 0 0 42px 6px rgba(0, 0, 0, 0.2);
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+    a img {
+        width: 100%;
+    }
+    .caption {
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        h3 {
+            font-size: 1.25rem;
+        }
+    }
+}
+.btn-toolbar {
+    justify-content: center;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

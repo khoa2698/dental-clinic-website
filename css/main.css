@@ -437,6 +437,45 @@ a:hover {
   }
 }
 
+#form-1 .mandatory {
+  color: #f33a58;
+}
+
+#form-1 .form-group .form-label {
+  font-weight: 500;
+}
+
+#form-1 .form-group #form-field-message {
+  resize: none;
+}
+
+#form-1 .form-group.invalid .form-control {
+  border-color: #f33a58;
+}
+
+#form-1 .form-group.invalid .form-message {
+  color: #f33a58;
+}
+
+#form-1 .form-submit {
+  outline: none;
+  background-color: #1dbfaf;
+  margin-top: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 header {
   position: relative;
   background-image: url(../images/bg1.jpeg);
@@ -2840,4 +2879,62 @@ header.about-us {
 
 .MakeAppointment {
   padding: 3.5rem 0;
+}
+
+.sideBar {
+  background-color: #F0F5F3;
+  font-size: 1.6rem;
+}
+
+.sideBar .navbar-brand {
+  font-size: 1.6rem;
+}
+
+.sideBar .navbar-collapse {
+  display: block;
+}
+
+.sideBar .navbar-collapse .dropdown-menu a {
+  font-size: 1.4rem;
+}
+
+.thumbnail {
+  margin-top: 30px;
+  -webkit-transition: 0.25s ease-in;
+  transition: 0.25s ease-in;
+}
+
+.thumbnail:hover {
+  -webkit-box-shadow: 0 0 42px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 42px 6px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.thumbnail a img {
+  width: 100%;
+}
+
+.thumbnail .caption {
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.thumbnail .caption h3 {
+  font-size: 1.25rem;
+}
+
+.btn-toolbar {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
